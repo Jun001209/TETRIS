@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp17x0msv1a0s"]
+
+[ext_resource type="Texture2D" uid="uid://cjrekabaq5hn7" path="res://Image/테트리스 로고.png" id="1_0dwu0"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ul1tq"]
+[ext_resource type="FontFile" uid="uid://ccnsepm26ggrl" path="res://Texts/BowlbyOne-Regular.ttf" id="2_bx5gs"]
+[ext_resource type="PackedScene" uid="uid://dphace6wqah3a" path="res://Scenes/options_menu.tscn" id="4_2lr6d"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ul1tq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_0dwu0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bx5gs")
+theme_override_font_sizes/font_size = 36
+text = "Start Game"
+
+[node name="Option_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bx5gs")
+theme_override_font_sizes/font_size = 36
+text = "Options"
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_bx5gs")
+theme_override_font_sizes/font_size = 36
+text = "Exit Game"
+
+[node name="Options_Menu" parent="." instance=ExtResource("4_2lr6d")]
+visible = false
+layout_mode = 1
