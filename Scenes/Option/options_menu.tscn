@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://mgncylxrr5oo" path="res://Texts/RozhaOne-Regular.ttf" id="1_jh5u5"]
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_l4fsw"]
-[ext_resource type="PackedScene" uid="uid://h1imf0asxnmw" path="res://Scenes/settings_tab_container.tscn" id="3_ix2jx"]
+[ext_resource type="PackedScene" uid="uid://h1imf0asxnmw" path="res://Scenes/Option/settings_tab_container.tscn" id="3_ix2jx"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3

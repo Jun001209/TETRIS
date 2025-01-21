@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://h1imf0asxnmw"]
 
-[ext_resource type="PackedScene" uid="uid://dck5b3cy04j7q" path="res://Scenes/window_mode_button.tscn" id="1_7gcfw"]
-[ext_resource type="PackedScene" uid="uid://bxtib5h1v24v2" path="res://Scenes/resolution_mode_button.tscn" id="2_o3fhx"]
-[ext_resource type="PackedScene" uid="uid://c4sgr82ld0vgs" path="res://Scenes/hotkey_rebind_button.tscn" id="3_6txk6"]
+[ext_resource type="PackedScene" uid="uid://dck5b3cy04j7q" path="res://Scenes/Option/window_mode_button.tscn" id="1_7gcfw"]
+[ext_resource type="PackedScene" uid="uid://bxtib5h1v24v2" path="res://Scenes/Option/resolution_mode_button.tscn" id="2_o3fhx"]
+[ext_resource type="PackedScene" uid="uid://c4sgr82ld0vgs" path="res://Scenes/Option/hotkey_rebind_button.tscn" id="3_6txk6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy5oy"]
 

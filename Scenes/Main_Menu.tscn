@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cjrekabaq5hn7" path="res://Image/테트리스 로고.png" id="1_0dwu0"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ul1tq"]
 [ext_resource type="FontFile" uid="uid://ccnsepm26ggrl" path="res://Texts/BowlbyOne-Regular.ttf" id="2_bx5gs"]
-[ext_resource type="PackedScene" uid="uid://dphace6wqah3a" path="res://Scenes/options_menu.tscn" id="4_2lr6d"]
+[ext_resource type="PackedScene" uid="uid://dphace6wqah3a" path="res://Scenes/Option/options_menu.tscn" id="4_2lr6d"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
