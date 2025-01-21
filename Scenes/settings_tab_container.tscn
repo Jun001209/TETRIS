@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://h1imf0asxnmw"]
+[gd_scene load_steps=5 format=3 uid="uid://h1imf0asxnmw"]
 
 [ext_resource type="PackedScene" uid="uid://dck5b3cy04j7q" path="res://Scenes/window_mode_button.tscn" id="1_7gcfw"]
 [ext_resource type="PackedScene" uid="uid://bxtib5h1v24v2" path="res://Scenes/resolution_mode_button.tscn" id="2_o3fhx"]
+[ext_resource type="PackedScene" uid="uid://c4sgr82ld0vgs" path="res://Scenes/hotkey_rebind_button.tscn" id="3_6txk6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy5oy"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -23,7 +26,7 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
@@ -52,6 +55,7 @@ layout_mode = 2
 text = "12324414"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -81,7 +85,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -97,14 +100,33 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
-alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "12324414"
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jy5oy")
+
+[node name="Hotkey_Rebind_Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_6txk6")]
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_6txk6")]
+layout_mode = 2
+action_name = "right"
+
+[node name="Hotkey_Rebind_Button3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_6txk6")]
+layout_mode = 2
+action_name = "down"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jy5oy")
 
 [node name="Acceelibility" type="TabBar" parent="TabContainer"]
 visible = false
