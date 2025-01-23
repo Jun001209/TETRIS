@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://h1imf0asxnmw"]
+[gd_scene load_steps=6 format=3 uid="uid://h1imf0asxnmw"]
 
 [ext_resource type="PackedScene" uid="uid://dck5b3cy04j7q" path="res://Scenes/Option scenes/window_mode_button.tscn" id="1_7gcfw"]
 [ext_resource type="PackedScene" uid="uid://bxtib5h1v24v2" path="res://Scenes/Option scenes/resolution_mode_button.tscn" id="2_o3fhx"]
 [ext_resource type="PackedScene" uid="uid://c4sgr82ld0vgs" path="res://Scenes/Option scenes/hotkey_rebind_button.tscn" id="3_6txk6"]
+[ext_resource type="PackedScene" uid="uid://d2dfwgsiylxe2" path="res://Scenes/Option scenes/audio_slider_settings.tscn" id="4_bku3k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy5oy"]
 
@@ -26,38 +27,12 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
-
-[node name="Sound" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "12324414"
+current_tab = 1
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
 layout_mode = 1
@@ -86,7 +61,7 @@ layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
 layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
 layout_mode = 1
@@ -107,11 +82,6 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 12
-theme_override_styles/separator = SubResource("StyleBoxEmpty_jy5oy")
-
 [node name="Hotkey_Rebind_Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_6txk6")]
 layout_mode = 2
 
@@ -127,6 +97,41 @@ action_name = "down"
 layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jy5oy")
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio_Slider_Settings" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_bku3k")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Audio_Slider_Settings2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_bku3k")]
+layout_mode = 2
+
+[node name="Audio_Slider_Settings3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_bku3k")]
+layout_mode = 2
+bus_name = "Sfx"
 
 [node name="Acceelibility" type="TabBar" parent="TabContainer"]
 visible = false

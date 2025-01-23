@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp17x0msv1a0s"]
+[gd_scene load_steps=6 format=3 uid="uid://dp17x0msv1a0s"]
 
-[ext_resource type="Texture2D" uid="uid://cjrekabaq5hn7" path="res://Image/테트리스 로고.png" id="1_0dwu0"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ul1tq"]
 [ext_resource type="FontFile" uid="uid://ccnsepm26ggrl" path="res://Texts/BowlbyOne-Regular.ttf" id="2_bx5gs"]
+[ext_resource type="Texture2D" uid="uid://b4ay04by0xmh5" path="res://Image/테트리스 로고 수정.png" id="2_xa4lh"]
 [ext_resource type="PackedScene" uid="uid://dphace6wqah3a" path="res://Scenes/Option scenes/options_menu.tscn" id="4_2lr6d"]
+[ext_resource type="AudioStream" uid="uid://d2vd8gjr2266l" path="res://Musics/stranger-things-124008.mp3" id="5_kjqfm"]
 
-[node name="MainMenu" type="Control"]
+[node name="Main_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,16 +37,18 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 32
 
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_0dwu0")
+texture = ExtResource("2_xa4lh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -56,7 +59,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 24
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -66,14 +69,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bx5gs")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
 text = "Start Game"
 
 [node name="Option_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bx5gs")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -81,9 +84,14 @@ custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_bx5gs")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
 text = "Exit Game"
 
 [node name="Options_Menu" parent="." instance=ExtResource("4_2lr6d")]
 visible = false
 layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kjqfm")
+autoplay = true
+bus = &"Music"
