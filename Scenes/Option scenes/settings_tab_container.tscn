@@ -82,6 +82,11 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 64
 
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jy5oy")
+
 [node name="Hotkey_Rebind_Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_6txk6")]
 layout_mode = 2
 
